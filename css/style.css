@@ -1,0 +1,181 @@
+@import url('reset.css');
+
+html, body {
+	height: 100%;
+}
+
+main {
+	flex-grow: 1;
+}
+
+.wrapper {
+	display: flex;
+	flex-flow: column;
+	min-height: 100%;
+}
+
+.container{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.header {
+	background: greenyellow;
+    padding: 40px 0;
+	line-height: 28px;
+	
+}
+
+.main-menu {
+	display: flex;
+	justify-content: center;
+	gap: 60px;
+    background:rgb(76, 238, 76);
+}
+
+.main-menu a {
+	display: block;
+	text-decoration: none;
+	padding: 20px 40px;
+    color: green;
+}
+
+.main-menu > li {
+	position: relative;
+    background: yellow;
+    text-transform: uppercase;
+}
+
+.main-menu > li:hover .new-ul {
+	display: block;
+}
+
+.new-ul {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1;
+	display: none;
+    padding: 40px 0 0;
+}
+
+.new-ul  li {
+	background: rgba(249, 249, 9, 0.856);
+    text-align: center;
+	position: relative;
+}
+
+.site-ul {
+    position: absolute;
+    right: 100%;
+    bottom: 0;
+    display: none;
+}
+
+.new-ul > li:hover .site-ul {
+    display: block;
+}
+
+.hidden {
+	width: 0;
+	height: 0;
+	position: absolute;
+	z-index: -1;
+}
+
+.footer {
+	background: green;
+	padding: 20px 0;
+	font-size: 30px;
+	color: #fff;
+	text-align: center;
+}
+
+.main-container {
+	position: fixed;
+	bottom: 0;
+	right: 50px;
+	width: 300px;
+	background: greenyellow;
+	transition: transform 1s ease-in-out;
+	transform: translateY(calc(100% - 50px));
+}
+
+.main-container:hover {
+	transform: translateY(0);
+}
+
+.main-text {
+	font-size: 30px;
+	color: green;
+    background-color: yellow;
+    text-align: center;
+	padding: 10px 0; 
+	animation: my-item 400ms ease-in-out infinite;
+}
+
+.main-list {
+	display: flex;
+	justify-content: center;
+	gap: 6px;
+	flex-flow: wrap;
+	width: 150px;
+	margin: 0 auto;
+	padding: 50px 0;
+	transform: rotate(-45deg);
+}
+
+.main-list li {
+	border: 2px solid black;
+	overflow: hidden;
+}
+
+.main-list a {
+	display: block;
+	padding: 5px;
+}
+
+.main-list li:nth-child(3) svg {
+	transform: rotate(45deg) translateX(-5px);
+}
+
+.main-icon {
+	width: 50px;
+	height: 50px;
+	fill: blue;
+	transform: rotate(45deg);
+}
+
+.main-list a:hover .main-icon {
+	fill: #000;
+}
+
+@keyframes my-item {
+	0% {
+		transform: translateX(0);
+	  }
+	
+	20% {
+		transform: translateX(-2px) rotateY(-5deg);
+	  }
+	
+	40% {
+		transform: translateX(4px) rotateY(7deg);
+	  }
+	
+	60% {
+		transform: translateX(-4px) rotateY(-7deg);
+	  }
+	
+	80% {
+		transform: translateX(2px) rotateY(5deg);
+	  }
+	
+	100% {
+		transform: translateX(0);
+	  }
+}
+
+.main-container:hover .main-text {
+	animation-play-state: paused;
+}
